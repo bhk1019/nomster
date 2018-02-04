@@ -7,5 +7,13 @@
 
 <% end %>
 <hr />
-<%= paginate @places %>
-<%= page_entries_info @places %>
+
+<div class ="container pagination justify-content-center">
+  <%= paginate @places, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
+  <br />
+  <!--
+  <p>
+    <%= page_entries_info @places %>
+  </p>
+  -->
+</div>
