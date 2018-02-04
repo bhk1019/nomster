@@ -57,6 +57,7 @@ gem 'bootstrap', '4.0.0.alpha6'
 gem 'bootstrap4-kaminari-views'
 gem 'bootstrap_form'
 gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
+gem 'simple_form'
 
 
 source 'https://rails-assets.org' do
