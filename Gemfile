@@ -58,7 +58,7 @@ gem 'bootstrap4-kaminari-views'
 gem 'bootstrap_form'
 gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
 gem 'simple_form'
-
+gem 'font-awesome-rails'
 
 source 'https://rails-assets.org' do
 #source 'http://insecure.rails-assets.org' do
