@@ -60,6 +60,8 @@ gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
 gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'devise'
+gem 'geocoder'
+gem 'figaro'
 
 source 'https://rails-assets.org' do
 #source 'http://insecure.rails-assets.org' do
