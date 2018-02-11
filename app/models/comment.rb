@@ -10,6 +10,8 @@ class Comment < ApplicationRecord
     'five stars': '5_stars'
   }
 
+  validates :message, :rating, presence: :true
+
   def humanized_rating
     RATINGS.invert[self.rating]
   end
