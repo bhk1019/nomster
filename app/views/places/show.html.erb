@@ -44,13 +44,15 @@
 
   <!-- Photos -->
   <div class="row">
-    <%= @place.photos.each do |photo| %>
+    <% @place.photos.each do |photo| %>
       <div class="col-12 col-sm-6">
-        <%= image_tag photo.picture %>
+        <%= image_tag photo.picture, class: "img-thumbnail" %>
         <%= photo.caption %>
       </div>
     <% end %>
   </div>
+
+  <br />
 
   <!-- Edit, Destroy, Add Photo, Add a Review Buttons -->
   <div >
