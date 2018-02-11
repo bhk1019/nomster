@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Cabin:400,700|Roboto:400,700,900');
 
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -17,20 +18,29 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
+a:hover {
+  text-decoration: none;
+  color: #ed991c;
+}
+
 body {
   background: image_url('food.png');
   font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .navbar {
-  background: image_url('always_grey.png');
+  background-color: #FFFFFF;
+  /*
+  background: image_url('subtle_orange_emboss');
   box-shadow: 0px 5px 5px grey;
+  */
 }
 
-.navbar-inverse .navbar-brand {
-  color: #FAD8A7;
-  font-family: "air_americaregular", sans-serif;
+.navbar-light .navbar-brand {
+  color: #ed991c;
+  font-family: 'Cabin', sans-serif;
   font-size: 26px;
+
 }
 
 .help-block {
@@ -61,6 +71,7 @@ blockquote {
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
+
 blockquote:before {
   color: #ccc;
   content: open-quote;
@@ -69,6 +80,14 @@ blockquote:before {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
+
 blockquote p {
   display: inline;
+}
+
+.place-name {
+  color: #8e8e8d;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
 }
