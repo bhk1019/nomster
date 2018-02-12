@@ -1,8 +1,49 @@
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
+
     <h1><%= link_to place.name, place_path(place), class: "place-name" %></h1><br />
+
+
     <i class="place-address"><%= place.address %></i><br /><br />
+
+
+    <% if place.latitude.present? && place.longitude.present? %>
+      <script>
+
+        function initMap() {
+          var myLatLng = {lat: <%= place.latitude %>, lng: <%= place.longitude %>};
+
+          var map = new google.maps.Map(document.getElementById('mini-map'), {
+            zoom: 12,
+            center: myLatLng
+          });
+
+          var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Hello World!'
+          });
+        }
+
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnji4oDnkrWheIMQ4fQp6XQ1endTyWMYg&callback=initMap">
+      </script>
+
+      <div id="mini-map"></div><br />
+    <% end %>
+
+
     <p class="place-description"><%= place.description %></p><br />
+
+
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <% if place.photos.present? %>
+          <%= image_tag place.photos.last.picture, class: "img-thumbnail" %>
+        <% end %>
+      </div>
+    </div>
 
     <% if place.user.present? %>
       <small>Place submitted by: <%= place.user.email %></small>
@@ -11,10 +52,11 @@
     <% if place.comments.present? %>
       <div class="col-12">
         <blockquote>
-          <b><%= place.comments.last.humanized_rating %></b> -
-            <%= place.comments.last.message %>
-          <small><%= place.comments.last.user.email %></small>
-        </blockquote>
+        <b><%= place.comments.last.humanized_rating %></b>
+          <%= place.comments.last.message %>
+        <br />
+        <small>- <%= place.comments.last.user.email %></small>
+      </blockquote>
       </div>
     <% end %>
   </div>
