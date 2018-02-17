@@ -38,6 +38,10 @@
               <% end %>
             </li>
 
+            <li class="nav-item">
+              <%= link_to 'My Profile', user_path(current_user), class: 'nav-link' %>
+            </li>
+
           <% else %>
 
             <li class="nav-item">
