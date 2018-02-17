@@ -106,3 +106,9 @@ blockquote p {
 .place-description {
   font-family: 'Roboto', sans-serif;
 }
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev{
+ display:block !important;
+}
