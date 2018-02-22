@@ -82,7 +82,11 @@
     </div>
 
     <% if place.user.present? %>
-      <small>Place submitted by: <%= place.user.email %></small>
+      <small>Place submitted by: 
+        <%= link_to user_path(place.user) do %>
+          <% place.user.email %>
+        <% end %>
+      </small>
     <% end %>
 
     <% if place.comments.present? %>
@@ -91,7 +95,11 @@
         <b><%= place.comments.last.humanized_rating %></b>
           <%= place.comments.last.message %>
         <br />
-        <small>- <%= place.comments.last.user.email %></small>
+        <small>- 
+          <%= link_to user_path(place.comments.last.user) do %>
+            <%= place.comments.last.user.email %>
+          <% end %>
+        </small>
       </blockquote>
       </div>
     <% end %>

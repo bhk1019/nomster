@@ -154,7 +154,11 @@
         <% end %>
           <%= comment.message %>
         <br />
-        <small>- <%= comment.user.email %></small>
+        <small>- 
+          <%= link_to user_path(comment.user) do %>
+            <%= comment.user.email %>
+          <% end %>
+        </small>
       </blockquote>
     </div>
   <% end %>
