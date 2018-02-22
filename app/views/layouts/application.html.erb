@@ -25,6 +25,13 @@
             <% end %>
           </li>
 
+          <li class="nav-item">
+            <%= link_to about_path, class: 'nav-link' do %>
+              <i class="fas fa-info-circle"></i>
+              About
+            <% end %>
+          </li>
+
         </ul>
 
         <ul class="navbar-nav">
@@ -32,21 +39,24 @@
           <% if user_signed_in? %>
 
             <li class="nav-item">
-              <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link' do %>
-                <i class="fas fa-sign-out-alt"></i>
-                Sign out
+              <%= link_to user_path(current_user), class: 'nav-link' do %>
+                <i class="fas fa-user"></i>
+                My Profile
               <% end %>
             </li>
 
             <li class="nav-item">
-              <%= link_to 'My Profile', user_path(current_user), class: 'nav-link' %>
+              <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link' do %>
+                <i class="fas fa-sign-out"></i>
+                Sign out
+              <% end %>
             </li>
 
           <% else %>
 
             <li class="nav-item">
               <%= link_to new_user_session_path, class: 'nav-link' do %>
-                <i class="fas fa-sign-in-alt"></i>
+                <i class="fas fa-sign-in"></i>
                 Log in
               <% end %>
             </li>
